@@ -1,5 +1,6 @@
 'use strict';
 
+const Joi = require('joi');
 const Hapi = require('hapi');
 const server = new Hapi.Server();
 
@@ -11,6 +12,24 @@ server.route({
   handler: (req, res) => res({
     hello: 'world'
   })
+});
+
+server.route({
+  method: 'POST',
+  path: '/api/v1/hello-world/{name}',
+  handler: (req, res) => {
+    hello: `${req.params.name} ${req.payload.surname}`
+  },
+  config: {
+    validate: {
+      params: {
+        name: Joi.string().required()
+      },
+      payload: Joi.object({
+        surname: Joi.string().min(3).max(60).required()
+      })
+    }
+  }
 });
 
 server.start(err => {
