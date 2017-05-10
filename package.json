@@ -1,0 +1,22 @@
+{
+  "name": "nodejs_hapi",
+  "version": "1.0.0",
+  "description": "App with NodeJS and Hapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TL-Developer/NodeJS_Hapi.git"
+  },
+  "author": "Tiago Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TL-Developer/NodeJS_Hapi/issues"
+  },
+  "homepage": "https://github.com/TL-Developer/NodeJS_Hapi#readme",
+  "dependencies": {
+    "hapi": "^16.1.1"
+  }
+}
